@@ -1,12 +1,11 @@
-import { Dispatch, useState } from 'react';
+import { useContext, useState } from 'react';
 import id from 'lodash.uniqueid';
 import AddSavedColor from './add-saved-color';
 import SavedColor from './saved-color';
-import { AdjustColorActions } from '../../color-reducer';
+import { ColorContext } from '../../context';
 
 type SavedColorsProps = {
   hexColor: string;
-  dispatch: Dispatch<AdjustColorActions>;
 };
 
 const saved = [
@@ -15,8 +14,9 @@ const saved = [
   { id: id(), name: 'Aggressive Salmon', hexColor: '#ff7799' },
 ];
 
-const SavedColors = ({ hexColor, dispatch }: SavedColorsProps) => {
+const SavedColors = ({ hexColor }: SavedColorsProps) => {
   const [savedColors, setSavedColors] = useState(saved);
+  const { dispatch } = useContext(ColorContext);
 
   const handleClick = (hexColor: string) => {
     dispatch({
