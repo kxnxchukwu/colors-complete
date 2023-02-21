@@ -3,8 +3,8 @@ import { cmyk, hsl, hsv, rgb } from "color-convert"
 //type HexColor = `#${string}`;
 //type RGBString = `rgb(${number}, ${number}, ${number})`;
 
-type ColorFormats = 'rgb' | 'hex' | 'hsl' | 'hsv';
-type ActionTypes = `update-${ColorFormats}-color`
+//type ColorFormats = 'rgb' | 'hex' | 'hsl' | 'hsv';
+//type ActionTypes = `update-${ColorFormats}-color`
 
 export type UpdateHEXColorAction = {
     type: 'update-hex-color',
