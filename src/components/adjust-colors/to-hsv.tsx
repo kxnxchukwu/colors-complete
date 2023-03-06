@@ -1,6 +1,5 @@
 import { hex } from 'color-convert';
-import { useContext } from 'react';
-import { ColorContext } from '../../context';
+import { useContext } from '../../context';
 import LabeledInput from '../shared/labeled-input';
 
 type HexToHSVProps = {
@@ -10,7 +9,7 @@ type HexToHSVProps = {
 const HexToHSV = ({ hexColor }: HexToHSVProps) => {
   const color = hex.hsv(hexColor);
   const [h, s, v] = color;
-  const { dispatch } = useContext(ColorContext);
+  const { dispatch } = useContext();
 
   const updateHSV = ({ hue = h, saturation = s, value = v }) => {
     dispatch({

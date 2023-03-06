@@ -1,8 +1,8 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import id from 'lodash.uniqueid';
 import AddSavedColor from './add-saved-color';
 import SavedColor from './saved-color';
-import { ColorContext } from '../../context';
+import { useContext } from '../../context';
 
 type SavedColorsProps = {
   hexColor: string;
@@ -16,7 +16,7 @@ const saved = [
 
 const SavedColors = ({ hexColor }: SavedColorsProps) => {
   const [savedColors, setSavedColors] = useState(saved);
-  const { dispatch } = useContext(ColorContext);
+  const { dispatch } = useContext();
 
   const handleClick = (hexColor: string) => {
     dispatch({

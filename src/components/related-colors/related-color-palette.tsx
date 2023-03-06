@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { ColorContext } from '../../context';
+import { useContext } from '../../context';
 import ColorChangeSwatch from '../shared/color-change-swatch';
 
 type RelatedColorPaletteProps = {
@@ -11,7 +10,7 @@ const RelatedColorPalette = ({
   title,
   hexColors,
 }: RelatedColorPaletteProps) => {
-  const { dispatch } = useContext(ColorContext);
+  const { dispatch } = useContext();
   const handleClick = (hexColor: string) => {
     dispatch({
       type: 'update-hex-color',
